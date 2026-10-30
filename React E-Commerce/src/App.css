@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f8f9fc;
+  color: #222;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+  width: 100%;
+  min-height: 75px;
+  padding: 15px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 800;
+  color: #222;
+}
+
+.logo span {
+  color: #6c63ff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #6c63ff;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+}
+
+.cart-icon {
+  font-size: 22px;
+}
+
+.cart-count {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #6c63ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Banner */
+
+.banner {
+  min-height: 370px;
+  margin: 30px 7%;
+  padding: 55px 7%;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #e8e7ff, #f2edff, #e7f2ff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.banner-content {
+  max-width: 550px;
+}
+
+.banner-subtitle {
+  color: #6c63ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.banner h1 {
+  font-size: 43px;
+  line-height: 1.2;
+  color: #24213d;
+  margin-bottom: 15px;
+}
+
+.banner-description {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 430px;
+  margin-bottom: 25px;
+}
+
+.shop-button {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #6c63ff;
+  color: white;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.shop-button:hover {
+  background: #5148df;
+  transform: translateY(-2px);
+}
+
+.banner-decoration {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 35px;
+}
+
+.banner-decoration span {
+  font-size: 95px;
+}
+
+/* Products */
+
+.products-section {
+  padding: 45px 7% 70px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-subtitle {
+  color: #6c63ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 9px;
+}
+
+.section-heading > p:last-child {
+  color: #777;
+  font-size: 14px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+/* Product Card */
+
+.product-card {
+  background: #ffffff;
+  border-radius: 13px;
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.09);
+}
+
+.product-image-container {
+  width: 100%;
+  height: 230px;
+  background: #f1f1f5;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-details {
+  padding: 20px;
+}
+
+.product-details h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #292929;
+}
+
+.product-price {
+  color: #6c63ff;
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 17px;
+}
+
+.add-cart-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background: #6c63ff;
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-cart-button:hover {
+  background: #5148df;
+}
+
+/* About */
+
+.about-section {
+  padding: 45px 7%;
+  text-align: center;
+  background: #eeedff;
+}
+
+.about-section h2 {
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.about-section p {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* Footer */
+
+.footer {
+  padding: 22px;
+  text-align: center;
+  background: #24213d;
+  color: white;
+  font-size: 13px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .banner h1 {
+    font-size: 36px;
+  }
+
+  .banner-decoration {
+    width: 150px;
+    height: 150px;
+    margin-right: 0;
+  }
+
+  .banner-decoration span {
+    font-size: 75px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .header {
+    padding: 14px 5%;
+    min-height: 65px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .cart-text {
+    display: none;
+  }
+
+  .cart-icon {
+    font-size: 19px;
+  }
+
+  .banner {
+    margin: 20px 5%;
+    padding: 35px 25px;
+    min-height: auto;
+  }
+
+  .banner h1 {
+    font-size: 29px;
+  }
+
+  .banner-description {
+    font-size: 13px;
+  }
+
+  .banner-decoration {
+    display: none;
+  }
+
+  .products-section {
+    padding: 35px 5% 50px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-image-container {
+    height: 240px;
+  }
+
+  .about-section {
+    padding: 35px 6%;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 360px) {
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+}
