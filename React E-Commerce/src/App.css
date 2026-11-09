@@ -21,8 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
-
 .header {
   width: 100%;
   min-height: 75px;
@@ -72,6 +70,14 @@ body {
   font-weight: 600;
 }
 
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
 .cart-icon {
   font-size: 22px;
 }
@@ -87,8 +93,6 @@ body {
   justify-content: center;
   font-size: 12px;
 }
-
-/* Banner */
 
 .banner {
   min-height: 370px;
@@ -161,8 +165,6 @@ body {
   font-size: 95px;
 }
 
-/* Products */
-
 .products-section {
   padding: 45px 7% 70px;
 }
@@ -196,8 +198,6 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
 }
-
-/* Product Card */
 
 .product-card {
   background: #ffffff;
@@ -268,7 +268,45 @@ body {
   background: #5148df;
 }
 
-/* About */
+.cart-section {
+  max-width: 1200px;
+  margin: 30px auto 50px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+  scroll-margin-top: 90px;
+}
+
+.cart-section h2 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.remove-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.remove-button:hover {
+  background: #c0392b;
+}
 
 .about-section {
   padding: 45px 7%;
@@ -289,8 +327,6 @@ body {
   font-size: 14px;
 }
 
-/* Footer */
-
 .footer {
   padding: 22px;
   text-align: center;
@@ -298,8 +334,6 @@ body {
   color: white;
   font-size: 13px;
 }
-
-/* Tablet */
 
 @media (max-width: 900px) {
   .products-grid {
@@ -319,9 +353,11 @@ body {
   .banner-decoration span {
     font-size: 75px;
   }
-}
 
-/* Mobile */
+  .cart-section {
+    margin: 30px 5%;
+  }
+}
 
 @media (max-width: 600px) {
   .header {
@@ -387,9 +423,16 @@ body {
   .about-section {
     padding: 35px 6%;
   }
-}
 
-/* Small Mobile */
+  .cart-section {
+    margin: 20px 5%;
+    padding: 18px;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+}
 
 @media (max-width: 360px) {
   .nav-links {

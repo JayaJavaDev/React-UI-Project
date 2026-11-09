@@ -1,3 +1,4 @@
+
 const Header = ({ cartCount }) => {
   return (
     <header className="header">
@@ -12,9 +13,11 @@ const Header = ({ cartCount }) => {
       </nav>
 
       <div className="cart">
-        <span className="cart-icon">🛒</span>
-        <span className="cart-text">Cart</span>
-        <span className="cart-count">{cartCount}</span>
+        <a href="#cart" className="cart-link">
+          <span className="cart-icon">🛒</span>
+          <span className="cart-text">Cart</span>
+          <span className="cart-count">{cartCount}</span>
+        </a>
       </div>
     </header>
   );

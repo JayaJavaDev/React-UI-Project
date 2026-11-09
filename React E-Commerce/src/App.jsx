@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Header from "./components/header";
 import Banner from "./components/banner";
@@ -6,15 +7,21 @@ import products from "./data/productData";
 import "./App.css";
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleAddToCart = () => {
-    setCartCount((previousCount) => previousCount + 1);
+  const handleAddToCart = (product) => {
+    setCartItems((previousItems) => [...previousItems, product]);
+  };
+
+  const handleRemoveFromCart = (indexToRemove) => {
+    setCartItems((previousItems) =>
+      previousItems.filter((_, index) => index !== indexToRemove)
+    );
   };
 
   return (
     <div className="app">
-      <Header cartCount={cartCount} />
+      <Header cartCount={cartItems.length} />
 
       <main>
         <Banner />
@@ -35,6 +42,28 @@ function App() {
               />
             ))}
           </div>
+        </section>
+
+        {/* Shopping Cart */}
+        <section className="cart-section" id="cart">
+          <h2>Shopping Cart ({cartItems.length})</h2>
+
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty.</p>
+          ) : (
+            cartItems.map((item, index) => (
+              <div className="cart-item" key={`${item.id}-${index}`}>
+                <span>{item.name} - ₹{item.price}</span>
+
+                <button
+                  className="remove-button"
+                  onClick={() => handleRemoveFromCart(index)}
+                >
+                  Remove
+                </button>
+              </div>
+            ))
+          )}
         </section>
 
         <section className="about-section" id="about">
